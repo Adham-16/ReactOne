@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Contact.css'; 
 
 export function Contact() {
     const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ export function Contact() {
             alert('Please fill in all fields!');
             return;
         }
-        // Sending data
+        // إرسال البيانات
     };
 
     return (
@@ -47,45 +48,69 @@ export function Contact() {
                 </div>
                 <div className="form w-100">
                     <form className="w-50 p-3 mx-auto mt-5" onSubmit={handleSubmit}>
-                        {showLabels.name && <label htmlFor="userName" className="position-relative c-1abc9c">userName:</label>}
-                        <input 
-                            type="text" 
-                            value={formData.name} 
-                            onChange={handleInputChange} 
-                            name="name" 
-                            placeholder="userName" 
-                            className="userName border-0 form-control my-4 border-bottom py-3 position-relative form" 
-                        />
+                        <div className="form-group">
+                            {showLabels.name && (
+                                <label htmlFor="userName" className={`position-relative c-1abc9c label-animation ${formData.name ? 'label-animation-active' : ''}`}>
+                                    userName:
+                                </label>
+                            )}
+                            <input 
+                                type="text" 
+                                value={formData.name} 
+                                onChange={handleInputChange} 
+                                name="name" 
+                                placeholder="userName" 
+                                className="userName border-0 form-control my-4 border-bottom py-3 position-relative form" 
+                            />
+                        </div>
 
-                        {showLabels.age && <label htmlFor="userAge" className="position-relative c-1abc9c">userAge:</label>}
-                        <input 
-                            type="number" 
-                            value={formData.age} 
-                            onChange={handleInputChange} 
-                            name="age" 
-                            placeholder="userAge" 
-                            className="userAge border-0 form-control my-4 border-bottom py-3 position-relative form" 
-                        />
+                        <div className="form-group">
+                            {showLabels.age && (
+                                <label htmlFor="userAge" className={`position-relative c-1abc9c label-animation ${formData.age ? 'label-animation-active' : ''}`}>
+                                    userAge:
+                                </label>
+                            )}
+                            <input 
+                                type="number" 
+                                value={formData.age} 
+                                onChange={handleInputChange} 
+                                name="age" 
+                                placeholder="userAge" 
+                                className="userAge border-0 form-control my-4 border-bottom py-3 position-relative form" 
+                            />
+                        </div>
 
-                        {showLabels.email && <label htmlFor="userEmail" className="position-relative c-1abc9c">userEmail:</label>}
-                        <input 
-                            type="email" 
-                            value={formData.email} 
-                            onChange={handleInputChange} 
-                            name="email" 
-                            placeholder="userEmail" 
-                            className="userEmail border-0 form-control my-4 border-bottom py-3 position-relative form" 
-                        />
+                        <div className="form-group">
+                            {showLabels.email && (
+                                <label htmlFor="userEmail" className={`position-relative c-1abc9c label-animation ${formData.email ? 'label-animation-active' : ''}`}>
+                                    userEmail:
+                                </label>
+                            )}
+                            <input 
+                                type="email" 
+                                value={formData.email} 
+                                onChange={handleInputChange} 
+                                name="email" 
+                                placeholder="userEmail" 
+                                className="userEmail border-0 form-control my-4 border-bottom py-3 position-relative form" 
+                            />
+                        </div>
 
-                        {showLabels.password && <label htmlFor="userPassword" className="position-relative c-1abc9c">userPassword:</label>}
-                        <input 
-                            type="password" 
-                            value={formData.password} 
-                            onChange={handleInputChange} 
-                            name="password" 
-                            placeholder="userPassword" 
-                            className="userPassword border-0 form-control my-4 border-bottom py-3 position-relative form" 
-                        />
+                        <div className="form-group">
+                            {showLabels.password && (
+                                <label htmlFor="userPassword" className={`position-relative c-1abc9c label-animation ${formData.password ? 'label-animation-active' : ''}`}>
+                                    userPassword:
+                                </label>
+                            )}
+                            <input 
+                                type="password" 
+                                value={formData.password} 
+                                onChange={handleInputChange} 
+                                name="password" 
+                                placeholder="userPassword" 
+                                className="userPassword border-0 form-control my-4 border-bottom py-3 position-relative form" 
+                            />
+                        </div>
 
                         <button type="submit" className="btn mt-4 text-white bg-1abc9c">send Message</button>
                     </form>

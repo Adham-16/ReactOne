@@ -1,0 +1,10 @@
+.label-animation {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.label-animation-active {
+  transform: translateY(-10px);
+  opacity: 1;
+}
